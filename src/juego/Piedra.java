@@ -5,11 +5,13 @@ import entorno.Entorno;
 import entorno.Herramientas;
 
 public class Piedra {
-    public static Object arrojar;
     int x; int y;
     Image img;
     Mono m;
-     
+    double puntos; 
+    int ancho = 30;
+    int alto = 17;
+   
     public Piedra(int x, int y){
         this.x = x;
         this.y = y;
@@ -17,18 +19,43 @@ public class Piedra {
     }
 
     public void arrojar(){
-        this.x += 1;
+        this.x += 5;
     }
 
-    public void moverse(){
-        this.x += 1;
-        
+    public void dibujarse(Entorno entorno) {
+        entorno.dibujarImagen(img, this.x, this.y, 0, 0.01);
+    }
+    
+    //GETTERS
+    public int getX() {
+        return this.x;
+    }
+    public int getY() {
+        return this.y;
     }
 
-    public void dibujarse(Entorno e) {
-        if (m.arrojarPiedra() == true){
-            e.dibujarImagen(img, this.x, this.y, 0, 0.02);
-        }
-    	
+    public int getAncho(){
+        return this.ancho;
+    }
+
+    public int getAlto(){
+        return this.alto;
+    }
+
+    //SETTERS
+    public void setX(int x){
+        this.x = x;
+    }
+
+    public void setY(int y){
+        this.y = y;
+    }
+    
+    public void setAncho(int ancho){
+        this.ancho = ancho;
+    }
+
+    public void setAlto(int alto){
+        this.alto = alto;
     }
 }
